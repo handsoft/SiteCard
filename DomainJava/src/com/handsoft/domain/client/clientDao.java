@@ -12,18 +12,18 @@ public class ClientDao {
         return pq;
     }
 
-    public PreparedQuery getOne(Integer client_id) {
-        Query q = new Query("cms_client");
-        Query.Filter f = new Query.FilterPredicate(
-            "client_id",
-            Query.FilterOperator.EQUAL,
-            client_id
-        );
-        q.setFilter(f);
+    public Entity getOne(Long client_id) {
 
-        PreparedQuery pq = datastore.prepare(q);
+        Entity entity = new Entity("cms_client", client_id);
 
-        return pq;
+        Entity client = null;
+        try {
+             client = datastore.get(entity.getKey());
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        return client;
     }
 
     public long add(String clientTitle, String clientWebsite) {
@@ -34,5 +34,28 @@ public class ClientDao {
         Key key = datastore.put(client);
 
         return key.getId();
+    }
+
+    public long save(Long clientId, String clientTitle, String clientWebsite) {
+        Entity client = new Entity("cms_client", clientId);
+
+        Key key = null;
+        try {
+            Entity clientToUpdate = datastore.get(client.getKey());
+            clientToUpdate.setProperty("client_title", clientTitle);
+            clientToUpdate.setProperty("client_website", clientWebsite);
+
+            key = datastore.put(clientToUpdate);
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        return key.getId();
+    }
+
+    public void delete(Long clientId) {
+        Entity client = new Entity("cms_client", clientId);
+
+        datastore.delete(client.getKey());
     }
 }
