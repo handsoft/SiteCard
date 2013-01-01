@@ -1,0 +1,186 @@
+.header {
+    background-color: #C6161D;
+    padding: 0 0 0 0;
+    min-height: 60px;
+    border-bottom: 1px solid #CECECE;
+    margin-bottom: 15px;
+}
+
+.siteLogo {
+    margin: 12px 0 0 0;
+}
+.siteTitle {
+    margin: 20px 0 0 0;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background-color: #E6E6E6;
+    padding: 0 0 0 0;
+    min-height: 60px;
+    border-top: 1px solid #CECECE;
+    margin-top: 15px;
+}
+
+.boxSection {
+    padding: 10px 10px 0 10px;
+    margin: 0 0 1em 0;
+    border: 1px solid #CCC;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    width: auto;
+    overflow: hidden;
+    background: white;
+}
+
+.leftMenu ul {
+ list-style: none;
+ margin: 0;
+ padding: 0 0 10px 0;
+}
+
+.leftMenu ul li {
+ font-weight: bold
+}
+
+.leftMenu ul ul li {
+}
+
+.leftMenu > ul > li > a > img {
+ vertical-align: middle;
+ margin: 0 5px 0 0;
+ width: 46px;
+ height: 46px;
+}
+
+.leftMenu li {
+ list-style: none;
+ float: none;
+ width: 100%;
+ margin: 0 0 5px 0;
+ padding: 0;
+}
+
+.leftMenu li ul {
+ margin: 5px 0 0 20px;
+ /*display: none;*/
+
+}
+
+.leftMenu li ul li {
+ padding: 0;
+ margin: 0
+}
+
+.leftMenu li ul li + li {
+ border-top: 1px solid #ddd;
+}
+
+.leftMenu li ul li.current,
+.leftMenu li ul li.current a {
+ color: #1586BA;
+ background: #e9e9e9;
+}
+
+.leftMenu li.current ul,
+.leftMenu li:hover ul {
+ display: block;
+}
+
+.leftMenu > ul > li > a{
+ font-size: 14px;
+ display: block;
+ width: 100%;
+ margin: 0;
+ padding: 2px;
+ color: #555;
+ /*background: #f1f1f1;*/
+}
+
+.leftMenu > ul > li > a:hover {
+ color: #1586BA;
+ /*background: #ddd;*/
+}
+
+.leftMenu li ul a{
+ display: block;
+ width: 100%;
+ margin: 0;
+ padding: 2px;
+ color: #555;
+ background: #f1f1f1;
+}
+
+.leftMenu li ul a:hover {
+ color: #1586BA;
+ background: #ddd;
+}
+
+.adminContent {
+    min-height: 127px;
+}
+
+h1.pagetitle {
+    margin: 0 0 0.4em 0;
+    padding: 0 0 2px 0;
+    border-bottom: solid 7px #E1E1E1;
+    font-family: "trebuchet ms",arial,sans-serif;
+    color: #646464;
+    font-weight: bold;
+    font-size: 220%;
+}
+
+#subNavBox {
+    float: right;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+#subNavBox a.add {
+    background-image: url(/img/add.jpg);
+    background-position: left center;
+}
+#subNavBox a.list {
+    background-image: url(/img/many.png);
+    background-position: left center;
+}
+
+#subNavBox a {
+    height: 22px;
+    padding: 4px;
+    margin: 3px 6px;
+    padding-left: 22px;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    color: #555;
+}
+
+#subNavBox a:hover {
+    color: #1586BA;
+}
+
+.contactform input[type="submit"] {
+    margin: -1px 5px 0 0;
+    float: right;
+}
+
+.contactform fieldset {
+    padding: 25px 10px 0 10px !important /*Non-IE6*/;
+    padding: 0 /*IE6*/;
+    margin: 0 0 20px 0;
+    border: solid 1px gainsboro;
+}
+
+.contactform fieldset legend {
+    margin: 0 0 20px 5px;
+    padding: 0 2px 0 2px;
+    color: #505050;
+    font-weight: bold;
+    font-size: 130%;
+}
+
+span.required, label.error {
+    color: red;
+}
