@@ -8,9 +8,9 @@ public class ClientContract implements Contract {
     private String clientWebsite;
 
     public ClientContract(HttpServletRequest req) {
-        this.clientId = req.getParameter("client_id");
-        this.clientTitle = req.getParameter("client_title");
-        this.clientWebsite = req.getParameter("client_website");
+        this.clientId = (req.getParameter("id") == null)?"":req.getParameter("id");
+        this.clientTitle = (req.getParameter("client_title") == null)?"":req.getParameter("client_title");
+        this.clientWebsite = (req.getParameter("client_website") == null)?"":req.getParameter("client_website");
     }
 
     public String getClientTitle() {

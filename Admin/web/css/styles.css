@@ -184,3 +184,16 @@ h1.pagetitle {
 span.required, label.error {
     color: red;
 }
+
+table.icon {
+	width:100%;
+	background-color:#FFFFFF;
+	margin:0;
+	padding:0;
+}
+
+td.icon {
+    border: none !important;
+	padding:0 20px;
+	width:50px;
+}

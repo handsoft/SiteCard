@@ -17,19 +17,32 @@ public class AdminContentManagementServlet extends HttpServlet {
     throws IOException {
 
         String area = req.getParameter("area");
+        String action = req.getParameter("action");
 
         if ("client".equals(area)) {
-            Contract contract = new ClientContract(req);
-            ActionHandler aHandler = new ClientActionHandler();
+            if ("add".equals(action) || "edit".equals(action)) {
+                Contract contract = new ClientContract(req);
+                ActionHandler aHandler = new ClientActionHandler();
 
-            aHandler.save(contract);
-        }
-        try {
-            resp.sendRedirect("/?area=client&action=list");
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
+                aHandler.save(contract);
 
+                try {
+                    resp.sendRedirect("/?area=client&action=list");
+                } catch (IOException e) {
+                  e.printStackTrace();
+                }
+            } else if("delete".equals(action)) {
+                Contract contract = new ClientContract(req);
+                ActionHandler aHandler = new ClientActionHandler();
+
+                aHandler.delete(contract);
+                try {
+                    resp.sendRedirect("/?area=client&action=list");
+                } catch (IOException e) {
+                  e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override

@@ -4,4 +4,5 @@ import com.handsoft.admin.contract.Contract;
 
 public interface ActionHandler {
     public void save(Contract contract);
+    public void delete(Contract contract);
 }

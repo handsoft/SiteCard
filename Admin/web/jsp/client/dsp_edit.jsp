@@ -1,25 +1,23 @@
-<%@ page import="com.google.appengine.api.datastore.FetchOptions" %>
 <%@ page import="com.handsoft.domain.client.ClientDao" %>
 <%@ page import="com.google.appengine.api.datastore.PreparedQuery" %>
 <%@ page import="com.google.appengine.api.datastore.Entity" %>
 
 <%
     String param = request.getParameter("id");
-    Integer id = 0;
+    long id = 0;
     if (param != null && !"".equals(param)) {
-        id = Integer.parseInt(param);
+        id = Long.parseLong(param);
     }
 
     String client_title = "";
     String client_website = "";
 
     if (id > 0) {
-        com.handsoft.domain.client.ClientDao client = new com.handsoft.domain.client.ClientDao();
-        PreparedQuery pq = client.getOne(id);
-        Entity result = pq.asSingleEntity();
+        ClientDao client = new ClientDao();
+        Entity eClient = client.getOne(id);
 
-        client_title = result.getProperty("client_id").toString();
-        client_website = result.getProperty("client_website").toString();
+        client_title = eClient.getProperty("client_title").toString();
+        client_website = eClient.getProperty("client_website").toString();
     }
 
 //    if (pq.asList(FetchOptions.Builder.withOffset(0)).size() > 0) {
@@ -46,6 +44,13 @@
 <form method="get" action="/action" name="frmEdit" id="frmEdit" >
     <input type="hidden" name="id" value="<%=id%>" />
     <input type="hidden" name="area" value="client" />
+    <%
+        String action = "add";
+        if (id > 0) {
+            action = "edit";
+        }
+    %>
+    <input type="hidden" name="action" value="<%=action%>" />
     <div class="contactform">
 	    <input type="submit" name="submit" id="submit" class="button" value="Save" />
         <div id="editBox">

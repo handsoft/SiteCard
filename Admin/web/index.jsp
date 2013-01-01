@@ -23,10 +23,14 @@
         <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/js/tabs/ui.tabs.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="/js/tableSorter/blue/style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="/js/modal/css/confirm.css" type="text/css" media="screen" />
 
         <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="/js/tabs/ui.tabs.js"></script>
+        <script type="text/javascript" src="/js/modal/js/jquery.simplemodal.js"></script>
+        <script type="text/javascript" src="/js/modal/js/confirm.js"></script>
+
     </head>
     <body>
         <div class="container header">
